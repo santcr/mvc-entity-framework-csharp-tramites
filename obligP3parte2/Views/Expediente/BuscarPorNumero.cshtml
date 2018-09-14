@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "BuscarPorNumero";
+}
+
+<h2>Buscar por Número</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Código del expediente: @Html.TextBox("numero")<br />
+        <input type="submit" value="Buscar" />
+    </p>
+}
+
+
+

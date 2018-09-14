@@ -1,0 +1,3 @@
+﻿1|Tramite 1|Un trámite con 2 etapas y 2 grupos.|5.30|7
+2|Tramite 2|Otro trámite con varias etapas.|50.00|9
+3|Tramite 3|Otro trámite más con varias etapas.|38.00|11

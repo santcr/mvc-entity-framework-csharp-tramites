@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Oblig. P3 parte 2";
+}
+
+<div class="jumbotron">
+    <h2>Oblig. P3 parte 2</h2>
+
+    <p class="lead">Segunda parte del obligatorio de Programación 3. MVC y Entity Framework.</p>
+
+    <p class="lead">Para que todo funcione bien primero hay que <strong>@Html.ActionLink("cargar datos.", "CargarDatos", "Home")</strong></p> 
+
+    @if (Session["UsuarioMail"] == null)
+    {
+        <p class="lead">Para continuar tiene que hacer <strong>@Html.ActionLink("Login", "Login", "Usuario")</strong></p>
+    }
+    else
+    {
+        <p class="lead">Bienvenido <strong>@Session["UsuarioMail"]</strong></p>
+    }
+
+
+
+</div>
+
+<div class="row">
+
+</div>

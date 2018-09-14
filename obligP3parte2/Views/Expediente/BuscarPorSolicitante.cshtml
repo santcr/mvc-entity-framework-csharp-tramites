@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "BuscarPorSolicitante";
+}
+
+<h2>Buscar por Solicitante</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Cédula del solicitante: @Html.TextBox("cedula")<br />
+        <input type="submit" value="Buscar" />
+    </p>
+}

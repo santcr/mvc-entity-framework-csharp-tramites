@@ -1,0 +1,139 @@
+﻿@model obligP3parte2.Models.Dominio.Expediente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Expediente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MailFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MailFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idSolicitante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idSolicitante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tramite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tramite.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Culminado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Culminado)
+        </dd>
+
+    </dl>
+
+    @if(Model.EtapasCumplidas != null ) 
+    {
+        foreach (var etapaCumplida in Model.EtapasCumplidas)
+        {
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(modelItem => etapaCumplida.Id)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => etapaCumplida.Id)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(modelItem => etapaCumplida.Etapa.CodigoAlfa)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => etapaCumplida.Etapa.CodigoAlfa)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(modelItem => etapaCumplida.Etapa.Descripcion)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => etapaCumplida.Etapa.Descripcion)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(modelItem => etapaCumplida.Funcionario.Mail)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => etapaCumplida.Funcionario.Mail)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(modelItem => etapaCumplida.Documento)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => etapaCumplida.Documento)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(modelItem => etapaCumplida.FechaFin)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => etapaCumplida.FechaFin)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(modelItem => etapaCumplida.SuperaLapsoMax)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => etapaCumplida.SuperaLapsoMax)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(modelItem => etapaCumplida.Documento)
+                </dt>
+                <dd>
+                    <img src="@Url.Content("~/docs/" + etapaCumplida.Documento )" width="20%" height="auto" alt="foto" />
+                </dd>
+
+            </dl>
+        }
+    }
+
+
+</div>
+<p>
+    @if (Model.Culminado == false)
+    {
+        @Html.ActionLink("Agregar etapa | ", "AgregarEtapa", new { id = Model.Codigo })
+    }
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Codigo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

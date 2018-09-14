@@ -1,0 +1,11 @@
+1@T1E01@Primera etapa@4
+1@T1E02@Segunda etapa@2
+1@T1E03@Tercera etapa@2
+2@T2E01@Primera etapa@3
+2@T2E02@Segunda etapa@3
+2@T2E03@Tercera etapa@2
+2@T2E04@Cuarta etapa@2
+3@T3E01@Primera etapa@3
+3@T3E02@Segunda etapa@3
+3@T3E03@Tercera etapa@2
+3@T3E04@Cuarta etapa@2

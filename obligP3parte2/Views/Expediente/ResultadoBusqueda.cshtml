@@ -1,0 +1,68 @@
+﻿@model IEnumerable<obligP3parte2.Models.Dominio.Expediente>
+
+@{
+    ViewBag.Title = "ResultadoBusqueda";
+}
+
+<h2>Resultado de la Busqueda</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tramite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Solicitante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MailFunc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Culminado)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Tramite.Titulo)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Solicitante.Cedula)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailFunc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Culminado)
+            </td>
+            <td>
+                @if (item.Culminado == false)
+                {
+                    @Html.ActionLink("Agregar etapa | ", "AgregarEtapa", new { id = item.Codigo })
+                }
+                @Html.ActionLink("Edit", "Edit", new { id = item.Codigo }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Codigo }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Codigo })
+            </td>
+        </tr>
+    }
+
+</table>
